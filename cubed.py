@@ -71,7 +71,7 @@ class Cubed:
 			temp += chr(self.stack[self.stack_index+x+1])
 		if len(temp) > 0:
 			self.commands = self.commands + [y for y in temp]
-			print(self.commands)
+			#print(self.commands)
 	
 	
 	def left(self):
