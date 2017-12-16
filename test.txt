@@ -1,1 +1,1 @@
-----[---->+<]>++<+~>>^
+----[---->+<]>++<+~>>^ // Opening a file with the name A and running the code inside of it.

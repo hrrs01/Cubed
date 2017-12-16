@@ -13,7 +13,7 @@ class Cubed:
 		self.loop_start = [0]
 		
 		self.stack_index = 0
-		self.functions = {"[": self.loop, "]": self.loop_end, "+": self.add, "-": self.sub, ".": self.output, "<": self.left, ">": self.right, ",": self.input, "^": self.append_code, "~": self.open_file}
+		self.functions = {"[": self.loop, "]": self.loop_end, "+": self.add, "-": self.sub, ".": self.output, "<": self.left, ">": self.right, ",": self.input, "^": self.append_code, "~": self.open_file, "*": self.jump}
 		
 		
 	def add(self):
@@ -88,7 +88,10 @@ class Cubed:
 	def loop(self):
 		self.loop_start.append(self.index-1)
 	
-	
+	def jump(self):
+		if self.stack[self.stack_index] > -1 and self.stack[self.stack_index] < len(self.stack):
+			self.index = self.jump
+		
 	
 	def if_stmnt(self):
 		if self.stack[self.stack_index] != 0:
